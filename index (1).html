@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Voces del Favaloro – Portal Cultural Estudiantil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#e8c97e;--navy:#1a1a2e;--nm:#2c3e50;--nl:#1e3a4f;--t:#1a1a1a;--tm:#666;--tf:#999;--bg:#f4f2ed;--s:#fff;--b:#e0ddd5}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--t);font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--navy);color:#bbb;font-size:12px;padding:6px 32px;display:flex;justify-content:space-between;align-items:center}
+.gold{color:var(--gold)}
+.header{background:var(--navy);padding:22px 32px 18px;border-bottom:3px solid var(--gold)}
+.logo-t{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#fff}
+.logo-t span{color:var(--gold)}
+.logo-s{font-size:11px;color:#888;letter-spacing:3.5px;text-transform:uppercase;margin-top:5px}
+.nav{background:var(--gold);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.ni{display:flex;align-items:center;gap:6px;padding:11px 14px;font-size:13px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;white-space:nowrap;text-decoration:none}
+.ni:hover,.ni.active{border-bottom-color:var(--navy);background:rgba(0,0,0,.06)}
+.ticker{background:#c0392b;color:#fff;display:flex;align-items:center;overflow:hidden}
+.tl{background:#922b21;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.tt{overflow:hidden;flex:1}
+.ti{display:flex;gap:48px;animation:mq 35s linear infinite;white-space:nowrap;padding:8px 20px;font-size:13px}
+.ti span::before{content:'◆  ';color:var(--gold)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.container{max-width:1200px;margin:0 auto}
+.mw{padding:28px 32px}
+.mg{display:grid;grid-template-columns:1fr 310px;gap:28px}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--b)}
+.sh h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
+.sh-i{font-size:20px;color:var(--gold)}
+.line{flex:1;height:1px;background:var(--b)}
+.nr{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.nc{cursor:pointer}
+.nc-img{height:120px;background:var(--nm);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.nc-img i{font-size:40px;color:rgba(232,201,126,.3)}
+.nc-cat{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;margin-bottom:5px}
+.nc-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;line-height:1.35;margin-bottom:5px}
+.nc-meta{font-size:11px;color:var(--tm)}
+.nc-text{font-size:13px;color:var(--tm);margin-top:8px;line-height:1.5}
+.ps{background:var(--navy);border-radius:10px;padding:22px 24px;margin-bottom:32px}
+.pl{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.pi{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border-radius:7px;padding:13px 16px;cursor:pointer;transition:background .15s;border:1px solid rgba(255,255,255,.06)}
+.pi:hover{background:rgba(255,255,255,.1)}
+.pp{width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pp i{font-size:16px;color:var(--navy);margin-left:2px}
+.pi-info{flex:1;min-width:0}
+.pi-ep{font-size:10px;color:var(--gold);letter-spacing:1.5px;font-weight:700;text-transform:uppercase}
+.pi-title{font-size:14px;color:#fff;font-weight:600;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pi-dur{font-size:11px;color:#777;margin-top:2px}
+.pi-time{font-size:11px;color:#666;white-space:nowrap}
+.tr-list{display:flex;flex-direction:column}
+.tr-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--b);cursor:pointer}
+.tr-item:last-child{border-bottom:none}
+.tr-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);line-height:1;flex-shrink:0;width:30px}
+.tr-cat{font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:1px}
+.tr-title{font-size:13px;font-weight:600;line-height:1.35;margin-top:2px}
+.footer{background:var(--navy);color:#aaa;padding:36px 32px 20px;margin-top:8px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:24px}
+.fc h4{font-family:'Playfair Display',serif;color:var(--gold);font-size:14px;margin-bottom:13px}
+.fc ul{list-style:none}
+.fc ul li{font-size:12px;padding:4px 0}
+.fl{font-family:'Playfair Display',serif;font-size:20px;color:#fff}
+.fl span{color:var(--gold)}
+.fb{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;display:flex;justify-content:space-between;font-size:11px;flex-wrap:wrap;gap:6px}
+.sw-box{background:var(--navy);border-radius:8px;padding:18px;margin-bottom:24px}
+.sw-box h3{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:6px}
+.sw-box p{font-size:12px;color:#aaa;margin-bottom:12px;line-height:1.55}
+.sw-input{width:100%;padding:8px 10px;border-radius:5px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-family:'Source Sans 3',sans-serif;outline:none;margin-bottom:8px}
+.sw-btn{width:100%;padding:9px;background:var(--gold);color:var(--navy);border:none;border-radius:5px;font-size:13px;font-weight:700;cursor:pointer}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:11px;padding:4px 10px;border-radius:4px;background:var(--s);color:var(--tm);border:1px solid var(--b);cursor:pointer}
+@media(max-width:900px){.mg{grid-template-columns:1fr}.nr{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.mw{padding:20px 16px}}
+@media(max-width:560px){.nr{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.logo-t{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div>Sábado, 16 de mayo de 2026 &nbsp;·&nbsp; <span class="gold">Buenos Aires, AR</span></div><div style="display:flex;gap:12px"><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" style="font-size:14px"></i></a><a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter" style="font-size:14px"></i></a><a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube" style="font-size:14px"></i></a></div></div>
+<header class="header"><div class="container"><div class="logo-t">Voces del <span>Favaloro</span></div><div class="logo-s">Portal Cultural Estudiantil</div></div></header>
+<nav class="nav" aria-label="Secciones"><div class="nav-inner container">
+<a href="#" class="ni active"><i class="ti ti-home"></i> Inicio</a>
+<a href="#deportes" class="ni"><i class="ti ti-ball-football"></i> Deportes</a>
+<a href="#cine" class="ni"><i class="ti ti-movie"></i> Cine</a>
+<a href="#libros" class="ni"><i class="ti ti-book"></i> Libros</a>
+<a href="#musica" class="ni"><i class="ti ti-music"></i> Música</a>
+<a href="#ciencia" class="ni"><i class="ti ti-microscope"></i> Ciencia</a>
+<a href="#historia" class="ni"><i class="ti ti-history"></i> Historia</a>
+<a href="#podcasts" class="ni"><i class="ti ti-microphone"></i> Podcasts</a>
+</div></nav>
+<div class="ticker"><div class="tl">Último momento</div><div class="tt"><div class="ti">
+      <span>Bienvenidos a Voces del Favaloro</span>
+      <span>Bienvenidos a Voces del Favaloro</span>
+</div></div></div>
+<div class="mw"><div class="container"><div class="mg">
+<main>
+<section><div class="sh"><i class="ti ti-ball-football sh-i"></i><h2>Deportes</h2><div class="line"></div></div><div class="nr"><article class="nc"><div class="nc-img"><i class="ti ti-ball-football"></i></div><div class="nc-cat">Deportes</div><div class="nc-title">TRIUNFÓ EL CLUB ATLETICO LA FALDA SOBRE HUERTA GRANDE</div><div class="nc-meta">Por Cristian Curto · 16/05/2026</div><p class="nc-text">El Club Atlético La Falda triunfó sobre el Club Huerta Grande en la onceava fecha del Torneo de la Liga de Punilla. </p></article></div></section>
+<section id="podcasts">
+<div class="ps">
+<div class="sh" style="border-bottom-color:rgba(255,255,255,.1)"><i class="ti ti-microphone sh-i"></i><h2 style="color:#fff">Nuestros Podcasts</h2><div class="line" style="background:rgba(255,255,255,.1)"></div></div>
+<div class="pl"><p style="color:#888;font-size:13px;padding:8px 0">Próximamente nuevos episodios...</p></div>
+</div>
+</section>
+</main>
+<aside>
+<div class="sh"><i class="ti ti-trending-up sh-i"></i><h2>Lo más leído</h2><div class="line"></div></div>
+<div class="tr-list"><div class="tr-item"><div class="tr-num">1</div><div><div class="tr-cat">Deportes</div><div class="tr-title">TRIUNFÓ EL CLUB ATLETICO LA FALDA SOBRE HUERTA GRANDE</div></div></div></div>
+<div class="sw-box" style="margin-top:24px">
+<h3>Suscribite al boletín</h3>
+<p>Recibí las notas más importantes directo en tu correo escolar.</p>
+<input class="sw-input" type="email" placeholder="tumail@favaloro.edu.ar"/>
+<button class="sw-btn">Suscribirme gratis</button>
+</div>
+<div style="margin-top:20px"><div class="sh"><i class="ti ti-tag sh-i"></i><h2>Temas</h2><div class="line"></div></div>
+<div class="tags"><span class="tag">Argentina</span><span class="tag">Fútbol</span><span class="tag">Cine</span><span class="tag">Literatura</span><span class="tag">Rock</span><span class="tag">Ciencia</span><span class="tag">Historia</span><span class="tag">Podcast</span><span class="tag">Favaloro</span><span class="tag">Educación</span></div></div>
+</aside>
+</div></div></div>
+<footer class="footer"><div class="container">
+<div class="fg">
+<div class="fc"><div class="fl">Voces del <span>Favaloro</span></div><p style="font-size:12px;color:#777;margin-top:10px">Portal de noticias culturales y deportivas. Hecho por estudiantes, para estudiantes.</p></div>
+<div class="fc"><h4>Secciones</h4><ul><li>Deportes</li><li>Cine</li><li>Libros</li><li>Música</li><li>Ciencia</li><li>Historia</li><li>Podcasts</li></ul></div>
+<div class="fc"><h4>El Portal</h4><ul><li>Quiénes somos</li><li>Sumar una nota</li><li>Contacto</li></ul></div>
+<div class="fc"><h4>Contacto</h4><ul><li>vocesdelfavaloro@gmail.com</li><li>@vocesdelfavaloro</li></ul></div>
+</div>
+<div class="fb"><p>© 2026 Voces del Favaloro · Todos los derechos reservados</p><p>Hecho con ❤️ por estudiantes</p></div>
+</div></footer>
+</body></html>
